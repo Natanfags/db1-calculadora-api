@@ -1,6 +1,6 @@
 package br.com.db1.calculadora.calculadoraapi.model;
 
-public enum Operacoes {
+public enum Operacao {
 	
 	SOMA {
 		@Override

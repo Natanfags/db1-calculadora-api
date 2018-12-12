@@ -27,21 +27,31 @@ public class Calculadora {
 	
 	@Enumerated(EnumType.STRING)
 	@Column(name = "operacao", nullable = false, length = 50)
-	private Operacoes operacoes;
+	private Operacao operacoes;
 	
-	@Column(name = "data", nullable = false, length = 20)
+	@Column(name = "data", length = 20)
 	private LocalDateTime data;
 	
-	@Column(name = "resultado", nullable = false, length = 14)
+	@Column(name = "resultado", length = 14)
 	private Double resultado;
 	
 	protected Calculadora() {
 	}
 	
-	public Calculadora(Double primeiroNumero, Double segundoNumero) {
-		this.numeroUm = primeiroNumero;
-		this.numeroDois = segundoNumero;
+	public Calculadora(Double numeroUm, Double numeroDois, Operacao operacao) {
+		this.numeroUm = numeroUm;
+		this.numeroDois = numeroDois;
+		this.operacoes = operacao;
+		this.resultado = operacao.executaOperacao(numeroUm, numeroDois);
+		this.data = LocalDateTime.now();
+		
 	}
+	
+	public Calculadora(Double numeroUm, Double numeroDois) {
+		this.numeroUm = numeroUm;
+		this.numeroDois = numeroDois;
+	}
+	
 	
 	public Long getId() {
 		return id;
@@ -59,7 +69,7 @@ public class Calculadora {
 		return resultado;
 	}
 	
-	public Operacoes getOperacoes() {
+	public Operacao getOperacoes() {
 		return operacoes;
 	}
 	
@@ -67,7 +77,7 @@ public class Calculadora {
 		return data;
 	}
 	
-	public Double executaOperacao(Operacoes operacoes) {
+	public Double executaOperacao(Operacao operacoes) {
 		return operacoes.executaOperacao(this.numeroUm, this.numeroDois);
 	}
 }
