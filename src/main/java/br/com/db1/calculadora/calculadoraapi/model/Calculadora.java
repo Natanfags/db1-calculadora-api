@@ -44,14 +44,12 @@ public class Calculadora {
 		this.operacoes = operacao;
 		this.resultado = operacao.executaOperacao(numeroUm, numeroDois);
 		this.data = LocalDateTime.now();
-		
 	}
 	
 	public Calculadora(Double numeroUm, Double numeroDois) {
 		this.numeroUm = numeroUm;
 		this.numeroDois = numeroDois;
 	}
-	
 	
 	public Long getId() {
 		return id;

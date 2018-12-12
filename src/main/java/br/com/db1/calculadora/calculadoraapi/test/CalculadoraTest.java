@@ -43,5 +43,4 @@ Calculadora calculadora = new Calculadora(4.0, 2.0);
 		
 		Assert.assertEquals(2.0, operacaoDivisao, 0.0);
 	}
-
 }

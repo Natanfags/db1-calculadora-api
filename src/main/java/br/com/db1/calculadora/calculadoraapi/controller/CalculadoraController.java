@@ -18,7 +18,9 @@ public class CalculadoraController {
 	private CalculadoraService calculadoraService;
 	
 	@GetMapping()
-	public Calculadora salvaResultado(@RequestParam("numeroUm")Double numeroUm, @RequestParam("numeroDois")Double numeroDois, @RequestParam("operacao")Operacao operacao ) {
+	public Calculadora salvaResultado(@RequestParam("numeroUm")Double numeroUm,
+			@RequestParam("numeroDois")Double numeroDois,
+			@RequestParam("operacao")Operacao operacao ) {
 		Calculadora calculadora = calculadoraService.salvaResultado(numeroUm, numeroDois, operacao);
 		return calculadora;
 	}
