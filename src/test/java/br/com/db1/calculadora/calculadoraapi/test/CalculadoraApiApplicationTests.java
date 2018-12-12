@@ -1,4 +1,4 @@
-package br.com.db1.calculadora.calculadoraapi;
+package br.com.db1.calculadora.calculadoraapi.test;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package br.com.db1.calculadora.calculadoraapi.test;
+package br.com.db1.calculadora.calculadoraapi.model.test;
 
 import org.junit.Assert;
 import org.junit.Test;
