@@ -33,7 +33,4 @@ public class CalculadoraDTO {
 	public void setNumeroDois(Double numeroDois) {
 		this.numeroDois = numeroDois;
 	}
-	
-	
-
 }
