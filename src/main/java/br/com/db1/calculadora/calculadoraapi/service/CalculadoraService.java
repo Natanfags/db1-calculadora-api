@@ -1,5 +1,7 @@
 package br.com.db1.calculadora.calculadoraapi.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +19,9 @@ public class CalculadoraService {
 		Calculadora calculadora = new Calculadora(numeroUm, numeroDois, operacao);
 		calculadoraRepository.save(calculadora);
 		return calculadora;
+	}
+	
+	public List<Calculadora> buscarTodosCalculos(){
+		return calculadoraRepository.findAll();
 	}
 }
