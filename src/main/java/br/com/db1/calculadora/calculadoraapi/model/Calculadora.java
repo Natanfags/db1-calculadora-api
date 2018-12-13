@@ -35,9 +35,6 @@ public class Calculadora {
 	@Column(name = "resultado", length = 14)
 	private Double resultado;
 	
-	protected Calculadora() {
-	}
-	
 	public Calculadora(Double numeroUm, Double numeroDois, Operacao operacao) {
 		this.numeroUm = numeroUm;
 		this.numeroDois = numeroDois;
@@ -49,6 +46,9 @@ public class Calculadora {
 	public Calculadora(Double numeroUm, Double numeroDois) {
 		this.numeroUm = numeroUm;
 		this.numeroDois = numeroDois;
+	}
+	
+	protected Calculadora() {
 	}
 	
 	public Long getId() {
