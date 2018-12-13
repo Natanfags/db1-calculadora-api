@@ -1,13 +1,13 @@
 package br.com.db1.calculadora.calculadoraapi.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.db1.calculadora.calculadoraapi.dto.CalculadoraDTO;
 import br.com.db1.calculadora.calculadoraapi.model.Calculadora;
-import br.com.db1.calculadora.calculadoraapi.model.Operacao;
 import br.com.db1.calculadora.calculadoraapi.service.CalculadoraService;
 
 @RestController
@@ -17,11 +17,11 @@ public class CalculadoraController {
 	@Autowired
 	private CalculadoraService calculadoraService;
 	
-	@GetMapping()
-	public Calculadora salvaResultado(@RequestParam("numeroUm")Double numeroUm,
-			@RequestParam("numeroDois")Double numeroDois,
-			@RequestParam("operacao")Operacao operacao ) {
-		Calculadora calculadora = calculadoraService.salvaResultado(numeroUm, numeroDois, operacao);
-		return calculadora;
+	@PostMapping()
+	public Calculadora salvaResultado(@RequestBody CalculadoraDTO calculadora){
+		return calculadoraService.salvaResultado(
+				calculadora.getNumeroDois(), 
+				calculadora.getNumeroUm(), 
+				calculadora.getOperacao());
 	}
 }
